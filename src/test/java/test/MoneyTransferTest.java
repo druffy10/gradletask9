@@ -49,6 +49,10 @@ public class MoneyTransferTest {
         var transferAmount = DataHelper.generateInvalidAmount(firstCardBalance);
         var transferPage = dashboardPage.selectCard(secondCardInfo);
         transferPage.makeTransfer(String.valueOf(transferAmount), firstCardInfo);
+        /*transferPage.errorMessage("Ошибка!");
+
+        Assertions.assertEquals(firstCardBalance, dashboardPage.getCardBalance(0));
+        Assertions.assertEquals(secondCardBalance, dashboardPage.getCardBalance(1));*/
     }
 }
 
