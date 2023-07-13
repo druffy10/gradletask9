@@ -23,6 +23,9 @@ public class DataHelper {
     }
 
     public static int generateValidAmount(int balance) {
+        if (balance < 0) {
+            balance = -balance + 10000;
+        }
         return new Random().nextInt(balance) + 1;
     }
 
