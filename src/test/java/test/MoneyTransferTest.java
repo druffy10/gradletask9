@@ -3,6 +3,7 @@ package test;
 import data.DataHelper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import page.DashboardPage;
 import page.LoginPage;
@@ -26,6 +27,7 @@ public class MoneyTransferTest {
     }
 
     @Test
+    @Order(1)
     public void shouldTransferMoneyFromFirstCardToSecondCard() {
         var firstCardInfo = DataHelper.getFirstCard();
         var secondCardInfo = DataHelper.getSecondCard();
@@ -41,6 +43,7 @@ public class MoneyTransferTest {
         Assertions.assertEquals(expectedSecondCardBalance, dashboardPage.getCardBalance(1));
     }
     @Test
+    @Order(2)
     public void shouldNotChangeBalanceOnInvalidTransfer() {
         var firstCardInfo = DataHelper.getFirstCard();
         var secondCardInfo = DataHelper.getSecondCard();

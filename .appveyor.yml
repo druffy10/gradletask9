@@ -14,4 +14,4 @@ install:
   - chmod +x gradlew
 
 build_script:
-  - ./gradlew -Dtest.single=MoneyTransferTest test -Ptest.single=MoneyTransferTest -Dselenide.headless=true -Dtest.worker.count=1 --info
+  - ./gradlew test -Dselenide.headless=true --info
